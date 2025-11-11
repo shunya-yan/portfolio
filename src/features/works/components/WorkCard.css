@@ -1,0 +1,39 @@
+/* Cardの見た目（枠線や影）はCard.cssに移動したので、ここでは中身のスタイルだけを定義 */
+.work-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.work-content {
+  padding: 20px;
+  text-align: left; /* text-alignをここに移動 */
+}
+/* ...（h3, p, .work-tech, .work-links のスタイルは変更なし）... */
+.work-content h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.work-tech {
+  margin: 15px 0;
+}
+.work-tech span {
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin-right: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.work-links {
+  margin-top: 20px;
+}
+.work-links a {
+  text-decoration: none;
+  color: #007bff;
+  margin-right: 15px;
+  font-weight: bold;
+}
+.work-links a:hover {
+  text-decoration: underline;
+}

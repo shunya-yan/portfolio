@@ -1,0 +1,106 @@
+/* --- ヘッダーの基本スタイル --- */
+.site-header {
+  background-color: #282c34;
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- タイトル --- */
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* --- ナビゲーションエリア全体 (リンク + UIスイッチャー) --- */
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* リンクとUIスイッチャーの間の間隔 */
+}
+
+/* --- ナビゲーションリンク --- */
+.site-header nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* 項目間のスペース */
+}
+
+.site-header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.site-header nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- UIスイッチャーのボタンスタイル --- */
+.ui-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui-switcher span {
+  font-size: 0.9rem;
+  color: #ccc; /* "UI:" のテキスト色 */
+}
+
+.ui-switcher button {
+  background-color: transparent;
+  border: 1px solid #61dafb; /* アクセントカラー */
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.ui-switcher button:hover {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+/* 現在選択中のボタンのスタイル */
+.ui-switcher button:disabled {
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* --- スマホ向けのレスポンシブ対応 --- */
+@media (max-width: 768px) {
+  /* ヘッダー全体を縦並びに */
+  .site-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  /* ナビゲーションエリア全体を縦並びに */
+  .site-header nav {
+    flex-direction: column; /* ナビ全体を縦に */
+    gap: 1rem;
+  }
+  
+  /* ナビゲーションリンクも縦並びに */
+  .site-header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* UIスイッチャーをナビリンクより上に表示 */
+  .ui-switcher {
+    order: -1; 
+  }
+}

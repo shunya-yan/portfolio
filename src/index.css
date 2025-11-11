@@ -1,0 +1,142 @@
+/* Reset default browser styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set up root styles */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Apply base styles to the body */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure React root takes up full height */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Consistent style for images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- メインコンテンツのレイアウト --- */
+.main-content {
+  width: 100%;
+  max-width: 1100px; /* PCで見たときの最大幅 */
+  margin: 0 auto;     /* 中央に配置 */
+  padding: 40px 20px; /* 上下に40px、左右に20pxの余白 */
+
+  /* セクション間に自動で40pxの隙間を作る */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; 
+}
+
+
+/* --- UI比較用のスタイル定義 --- */
+
+/* --- UI-B (例：ダークモード) --- */
+.theme-B body {
+  background-color: #121212;
+  color: #ffffff;
+}
+/* ダークモード時のProfileカード */
+.theme-B .profile-section {
+  background-color: #1e1e1e;
+  border-color: #333;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+/* ダークモード時のWorksカード */
+.theme-B .card-base {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+.theme-B .site-footer {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+/* ダークモード時のテキスト色 */
+.theme-B .profile-title,
+.theme-B .profile-name,
+.theme-B .profile-description,
+.theme-B .experience-item h4,
+.theme-B .experience-item p,
+.theme-B .profile-summary,
+.theme-B .tech-title,
+.theme-B .works-section h2,
+.theme-B .work-content h3,
+.theme-B .work-content p,
+.theme-B .site-footer p {
+  color: #eee;
+}
+.theme-B .experience-item {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+.theme-B .site-header {
+  background-color: #1e1e1e;
+}
+.theme-B .work-tech span {
+  background-color: #333;
+  color: #ccc;
+}
+.theme-B .profile-image {
+  border-color: #333;
+}
+
+
+/* --- UI-C (例：Worksをリスト表示) --- */
+.theme-C .works-grid {
+  grid-template-columns: 1fr; /* 1列にする */
+  gap: 20px;
+}
+.theme-C .card-base { /* WorkCardが使っている汎用Cardを横並びに */
+  display: flex;
+  align-items: center;
+}
+.theme-C .work-image {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.theme-C .work-content {
+  flex: 1;
+}
+
+/* --- UI-D (例：可読性重視・フォント変更) --- */
+.theme-D body {
+  font-family: "Georgia", "Times New Roman", serif; /* 明朝体（セリフ体）に変更 */
+  font-size: 17px; /* フォントサイズを少し大きく */
+  line-height: 1.8;
+}
+.theme-D .profile-section {
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+.theme-D .card-base {
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+.theme-D .site-header,
+.theme-D .contact-section {
+  background-color: #333;
+}

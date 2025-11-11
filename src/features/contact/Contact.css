@@ -1,0 +1,60 @@
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  max-width: 500px;
+  margin: 0 auto 40px auto; /* ボタンとの間隔を少し広げました */
+  font-size: 1.1rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* ボタン間のスペース */
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid #61dafb;
+  transition: all 0.3s ease;
+}
+
+.contact-link.email {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.contact-link.email:hover {
+  background-color: transparent;
+  color: #61dafb;
+}
+
+.contact-link.x-twitter {
+  background-color: transparent;
+  color: #61dafb;
+}
+
+.contact-link.x-twitter:hover {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+@media (max-width: 768px) {
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+}
