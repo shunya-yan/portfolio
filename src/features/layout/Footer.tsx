@@ -4,7 +4,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="site-footer">
-      <p>&copy; {currentYear} あなたの名前. All Rights Reserved.</p>
+      <p>&copy; {currentYear} 清水 俊也/Shimizu Shunya.</p>
     </footer>
   );
 };

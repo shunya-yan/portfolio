@@ -9,12 +9,12 @@ export const Contact = () => {
       </p>
       <div className="contact-links">
         {/* 'your.email@example.com' をご自身のメールアドレスに書き換えてください */}
-        <a href="mailto:your.email@example.com" className="contact-link email">
+        <a href="shunyan127@gmail.com" className="contact-link email">
           Email
         </a>
         {/* 'your_x_username' をご自身のXのユーザー名に書き換えてください */}
         <a 
-          href="https://x.com/your_x_username" 
+          href="https://x.com/shunya_yan127"
           target="_blank" 
           rel="noopener noreferrer" 
           className="contact-link x-twitter"
