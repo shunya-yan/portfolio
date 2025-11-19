@@ -6,7 +6,7 @@ export const Profile = () => {
       <div className="profile-content">
         <div className="profile-left">
           <img
-            src="https://placehold.jp/150x150.png?text=Profile"
+            src="img/プロフィール写真3.jpg"
             alt="プロフィール写真"
             className="profile-image"
           />
