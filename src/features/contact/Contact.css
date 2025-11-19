@@ -12,14 +12,14 @@
 
 .contact-section p {
   max-width: 500px;
-  margin: 0 auto 40px auto; /* ボタンとの間隔を少し広げました */
+  margin: 0 auto 40px auto;
   font-size: 1.1rem;
 }
 
 .contact-links {
   display: flex;
   justify-content: center;
-  gap: 20px; /* ボタン間のスペース */
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -31,26 +31,19 @@
   border-radius: 5px;
   border: 2px solid #61dafb;
   transition: all 0.3s ease;
-}
-
-.contact-link.email {
-  background-color: #61dafb;
-  color: #282c34;
-}
-
-.contact-link.email:hover {
+  cursor: pointer;
+  
   background-color: transparent;
-  color: #61dafb;
+  color: #61dafb !important;
 }
 
-.contact-link.x-twitter {
-  background-color: transparent;
-  color: #61dafb;
+.contact-link:visited {
+  color: #61dafb !important;
 }
 
-.contact-link.x-twitter:hover {
+.contact-link:hover {
   background-color: #61dafb;
-  color: #282c34;
+  color: #282c34 !important;
 }
 
 @media (max-width: 768px) {
