@@ -7,7 +7,7 @@ const worksData: Work[] = [
     id: 1,
     title: 'ポートフォリオサイト (This Site)',
     description: 'React, TypeScript, そしてクリーンなフォルダ構成で作成し、UI比較を行うことができるこのポートフォリオサイトです。',
-    imageUrl: 'https://placehold.jp/400x250.png?text=Portfolio',
+    imageUrl: 'img/portfolio.gif',
     tech: ['React', 'TypeScript', 'CSS'],
     url: '#', // ご自身のGitHubリポジトリのURLに差し替えるのがおすすめです
     githubUrl: 'https://github.com/shunya-yan/portfolio' //例: ご自身のGitHubリポジトリ
