@@ -1,34 +1,60 @@
 import './Header.css';
+import { UiFlags } from '../../App';
 
-// UIテーマの型をApp.tsxと合わせる
-type UiTheme = 'A' | 'B' | 'C' | 'D';
-
-// Headerが受け取るpropsの型を定義
 interface HeaderProps {
   title: string;
-  uiTheme: UiTheme;
-  setUiTheme: (theme: UiTheme) => void; // 関数の型
+  uiFlags: UiFlags;
+  toggleUi: (key: keyof UiFlags) => void;
 }
 
-export const Header = ({ title, uiTheme, setUiTheme }: HeaderProps) => {
+export const Header = ({ title, uiFlags, toggleUi }: HeaderProps) => {
   return (
     <header className="site-header">
       <h1 className="site-title">{title}</h1>
       <nav>
-        {/* 既存のナビゲーションリンク */}
         <ul>
           <li><a href="#profile">Profile</a></li>
           <li><a href="#works">Works</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        {/* 新しく追加：UI切り替えボタン */}
         <div className="ui-switcher">
-          <span>UI:</span>
-          <button onClick={() => setUiTheme('A')} disabled={uiTheme === 'A'}>A</button>
-          <button onClick={() => setUiTheme('B')} disabled={uiTheme === 'B'}>B</button>
-          <button onClick={() => setUiTheme('C')} disabled={uiTheme === 'C'}>C</button>
-          <button onClick={() => setUiTheme('D')} disabled={uiTheme === 'D'}>D</button>
+          <span>Switch:</span>
+          {/* A: カードを黒く */}
+          <button 
+            onClick={() => toggleUi('cardDark')} 
+            className={uiFlags.cardDark ? 'active' : ''}
+            title="カード背景を黒くする"
+          >
+            A (Card)
+          </button>
+
+          {/* B: 背景を黒く */}
+          <button 
+            onClick={() => toggleUi('bgDark')} 
+            className={uiFlags.bgDark ? 'active' : ''}
+            title="画面背景を黒くする"
+          >
+            B (Back)
+          </button>
+
+          {/* C: リスト表示 */}
+          <button 
+            onClick={() => toggleUi('listView')} 
+            className={uiFlags.listView ? 'active' : ''}
+            title="リスト形式で表示"
+          >
+            C (List)
+          </button>
+
+          {/* D: 大きなアニメーション */}
+          <button 
+            onClick={() => toggleUi('bigAnim')} 
+            className={uiFlags.bigAnim ? 'active' : ''}
+            title="ダイナミックな動き"
+          >
+            D (Anim)
+          </button>
         </div>
       </nav>
     </header>

@@ -1,4 +1,4 @@
-/* Reset default browser styles */
+/* --- 基本設定 --- */
 *,
 *::before,
 *::after {
@@ -6,137 +6,295 @@
   margin: 0;
   padding: 0;
 }
-
-/* Set up root styles */
 html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
 
-/* Apply base styles to the body */
+/* デフォルト（AもBもOFF）：白背景、白カード */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4; /* 少しグレーな白 */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Ensure React root takes up full height */
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
-/* Consistent style for images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* --- メインコンテンツのレイアウト --- */
 .main-content {
   width: 100%;
-  max-width: 1100px; /* PCで見たときの最大幅 */
-  margin: 0 auto;     /* 中央に配置 */
-  padding: 40px 20px; /* 上下に40px、左右に20pxの余白 */
-
-  /* セクション間に自動で40pxの隙間を作る */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  gap: 40px; 
+  gap: 40px;
 }
 
+/* --- セクションのサイズと形状の統一 --- */
+.profile-section,
+.works-section,
+.contact-section {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+}
 
-/* --- UI比較用のスタイル定義 --- */
+.card-base {
+  border-radius: 16px;
+}
 
-/* --- UI-B (例：ダークモード) --- */
-.theme-B body {
-  background-color: #121212;
-  color: #ffffff;
+/* --- Headerボタンのスタイル --- */
+.ui-switcher button.active {
+  background-color: #61dafb;
+  color: #282c34;
+  border-color: #61dafb;
+  font-weight: bold;
 }
-/* ダークモード時のProfileカード */
-.theme-B .profile-section {
-  background-color: #1e1e1e;
-  border-color: #333;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+/* 背景が黒くなった時のボタン視認性確保 */
+.ui-bg-dark .ui-switcher button,
+.ui-card-dark .ui-switcher button {
+  color: #fff;
+  border-color: #fff;
 }
-/* ダークモード時のWorksカード */
-.theme-B .card-base {
-  background-color: #1e1e1e;
-  border-color: #333;
+.ui-bg-dark .ui-switcher button.active,
+.ui-card-dark .ui-switcher button.active {
+  background-color: #fff;
+  color: #333;
 }
-.theme-B .site-footer {
-  background-color: #1e1e1e;
-  border-color: #333;
+
+/* =========================================
+   UIスイッチのスタイル定義
+   ========================================= */
+
+/* 共通のダークテキスト設定 */
+.ui-card-dark,
+.ui-bg-dark {
+  color: #e0e0e0;
 }
-/* ダークモード時のテキスト色 */
-.theme-B .profile-title,
-.theme-B .profile-name,
-.theme-B .profile-description,
-.theme-B .experience-item h4,
-.theme-B .experience-item p,
-.theme-B .profile-summary,
-.theme-B .tech-title,
-.theme-B .works-section h2,
-.theme-B .work-content h3,
-.theme-B .work-content p,
-.theme-B .site-footer p {
+
+/* 見出し、本文、リンクなどの色を強制的に明るくする */
+.ui-card-dark h1,
+.ui-card-dark h2,
+.ui-card-dark h3,
+.ui-card-dark h4,
+.ui-card-dark p,
+.ui-card-dark span,
+.ui-card-dark a,
+.ui-card-dark li,
+.ui-bg-dark h1,
+.ui-bg-dark h2,
+.ui-bg-dark h3,
+.ui-bg-dark h4,
+.ui-bg-dark p,
+.ui-bg-dark span,
+.ui-bg-dark a,
+.ui-bg-dark li,
+.ui-card-dark .tech-title,
+.ui-bg-dark .tech-title,
+.ui-card-dark .profile-name,
+.ui-bg-dark .profile-name,
+.ui-card-dark .site-footer p,
+.ui-bg-dark .site-footer p {
+  /* フッターの文字色を追加 */
+  color: #e0e0e0 !important;
+}
+
+/* Contactセクションの文字色対策 */
+.ui-card-dark .contact-section h2,
+.ui-card-dark .contact-section p,
+.ui-bg-dark .contact-section h2,
+.ui-bg-dark .contact-section p {
+  color: #e0e0e0 !important;
+}
+
+/* 薄くなりがちな文字の調整 */
+.ui-card-dark .profile-description,
+.ui-card-dark .experience-item p,
+.ui-card-dark .profile-summary,
+.ui-card-dark .work-content p,
+.ui-bg-dark .profile-description,
+.ui-bg-dark .experience-item p,
+.ui-bg-dark .profile-summary,
+.ui-bg-dark .work-content p {
+  color: #ccc !important;
+}
+
+/* Contactセクションのデフォルト色を白に */
+.contact-section {
+  background-color: #fff !important;
+  color: #333 !important;
+  border-top: 1px solid #e0e0e0;
+}
+.contact-section h2,
+.contact-section p {
+  color: #333 !important;
+}
+
+/* --- パターンA: カードを黒くする (Card Dark) --- */
+/* 注意: ここでは背景色は変更せず、カードのみ黒くします */
+
+.ui-card-dark .profile-section,
+.ui-card-dark .card-base,
+.ui-card-dark .experience-item,
+.ui-card-dark .site-footer,
+.ui-card-dark .site-header,
+.ui-card-dark .contact-section,
+.ui-card-dark .works-section {
+  background-color: #1e1e1e !important; /* カードを黒く */
+  color: #eee;
+  border: 1px solid #333;
+  border-radius: 16px;
+}
+
+.ui-card-dark .site-header {
+  background-color: #121212 !important;
+  border-bottom: 1px solid #333;
+}
+
+.ui-card-dark h1,
+.ui-card-dark h2,
+.ui-card-dark h3,
+.ui-card-dark p,
+.ui-card-dark span,
+.ui-card-dark a {
   color: #eee;
 }
-.theme-B .experience-item {
-  background-color: #2a2a2a;
-  border-color: #444;
-}
-.theme-B .site-header {
-  background-color: #1e1e1e;
-}
-.theme-B .work-tech span {
+.ui-card-dark .work-tech span,
+.ui-card-dark .skill-item {
   background-color: #333;
-  color: #ccc;
-}
-.theme-B .profile-image {
-  border-color: #333;
+  color: #fff;
+  border: 1px solid #555;
 }
 
-
-/* --- UI-C (例：Worksをリスト表示) --- */
-.theme-C .works-grid {
-  grid-template-columns: 1fr; /* 1列にする */
-  gap: 20px;
+/* --- パターンB: 背景を黒くする (Bg Dark) --- */
+/* ここで画面全体の背景を黒くします */
+.ui-bg-dark {
+  background-color: #121212; /* 背景を真っ黒に */
+  min-height: 100vh; /* 画面の高さ一杯に広げる */
 }
-.theme-C .card-base { /* WorkCardが使っている汎用Cardを横並びに */
+
+/* BのみONの場合（AはOFF）：背景は黒いが、カードは白く戻す（スポットライト風） */
+.ui-bg-dark:not(.ui-card-dark) .profile-section,
+.ui-bg-dark:not(.ui-card-dark) .card-base,
+.ui-bg-dark:not(.ui-card-dark) .experience-item,
+.ui-bg-dark:not(.ui-card-dark) .site-footer,
+.ui-bg-dark:not(.ui-card-dark) .contact-section,
+.ui-bg-dark:not(.ui-card-dark) .works-section {
+  background-color: #fff !important;
+  color: #333 !important;
+  border-radius: 16px;
+}
+/* BのみONの場合のテキスト色リセット */
+/* カード内のあらゆるテキスト要素を黒に戻す */
+.ui-bg-dark:not(.ui-card-dark) .profile-section h2,
+.ui-bg-dark:not(.ui-card-dark) .profile-section p,
+.ui-bg-dark:not(.ui-card-dark) .profile-section h3,
+.ui-bg-dark:not(.ui-card-dark) .profile-section h4,
+.ui-bg-dark:not(.ui-card-dark) .profile-section span,
+.ui-bg-dark:not(.ui-card-dark) .profile-section li,
+.ui-bg-dark:not(.ui-card-dark) .profile-section i,
+.ui-bg-dark:not(.ui-card-dark) .experience-item h4,
+.ui-bg-dark:not(.ui-card-dark) .experience-item p,
+.ui-bg-dark:not(.ui-card-dark) .work-content h3,
+.ui-bg-dark:not(.ui-card-dark) .work-content p,
+.ui-bg-dark:not(.ui-card-dark) .work-content a,
+.ui-bg-dark:not(.ui-card-dark) .work-content span,
+.ui-bg-dark:not(.ui-card-dark) .contact-section h2,
+.ui-bg-dark:not(.ui-card-dark) .contact-section p,
+.ui-bg-dark:not(.ui-card-dark) .contact-section a,
+.ui-bg-dark:not(.ui-card-dark) .works-section h2,
+.ui-bg-dark:not(.ui-card-dark) .tech-title,
+.ui-bg-dark:not(.ui-card-dark) .profile-name,
+.ui-bg-dark:not(.ui-card-dark) .site-footer p {
+  /* フッターも黒に戻す */
+  color: #333 !important;
+}
+
+/* --- パターンA + B: 完全ダークモード (Full Dark) --- */
+/* 背景もカードも黒いので、境界線を目立たせる */
+.ui-card-dark.ui-bg-dark .profile-section,
+.ui-card-dark.ui-bg-dark .card-base,
+.ui-card-dark.ui-bg-dark .experience-item,
+.ui-card-dark.ui-bg-dark .contact-section,
+.ui-card-dark.ui-bg-dark .works-section {
+  border: 1px solid rgba(97, 218, 251, 0.5); /* 青いボーダー */
+  box-shadow: 0 0 15px rgba(97, 218, 251, 0.1);
+}
+
+/* パターンC: リスト表示 (List View) */
+.ui-list .works-grid {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+.ui-list .card-base {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: stretch;
 }
-.theme-C .work-image {
-  width: 250px;
-  height: 150px;
+.ui-list .work-image {
+  width: 300px;
+  height: auto;
   object-fit: cover;
   flex-shrink: 0;
 }
-.theme-C .work-content {
+.ui-list .work-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+@media (max-width: 768px) {
+  .ui-list .card-base {
+    flex-direction: column;
+  }
+  .ui-list .work-image {
+    width: 100%;
+    height: 200px;
+  }
 }
 
-/* --- UI-D (例：可読性重視・フォント変更) --- */
-.theme-D body {
-  font-family: "Georgia", "Times New Roman", serif; /* 明朝体（セリフ体）に変更 */
-  font-size: 17px; /* フォントサイズを少し大きく */
-  line-height: 1.8;
+/* パターンD: 大きなアニメーション (Big Animation) */
+.ui-anim .card-base,
+.ui-anim .profile-section {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s;
 }
-.theme-D .profile-section {
-  box-shadow: none;
-  border: 1px solid #ccc;
+.ui-anim .card-base:hover,
+.ui-anim .profile-section:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
-.theme-D .card-base {
-  box-shadow: none;
-  border: 1px solid #ccc;
+.ui-anim .skill-item:hover {
+  transform: rotate(5deg) scale(1.1);
+  background-color: #61dafb;
+  color: #fff;
 }
-.theme-D .site-header,
-.theme-D .contact-section {
-  background-color: #333;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ui-anim .main-content {
+  animation: slideIn 0.8s ease-out;
 }

@@ -6,6 +6,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  /* ↓↓↓ 追従（Sticky）ヘッダーの設定を追加 ↓↓↓ */
+  position: sticky; /* スクロールしても上部に張り付く設定 */
+  top: 0;           /* 上端0pxの位置に固定 */
+  z-index: 1000;    /* 他のコンテンツより手前に表示 */
+  width: 100%;      /* 横幅いっぱい */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 境界がわかるように少し影をつける */
+  /* ↑↑↑ ここまで追加 ↑↑↑ */
 }
 
 /* --- タイトル --- */
@@ -69,7 +77,12 @@
   color: #282c34;
 }
 
-/* 現在選択中のボタンのスタイル */
+/* 現在選択中のボタンのスタイル（App.tsxのロジック変更に合わせて .active クラスに対応） */
+.ui-switcher button.active {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
 .ui-switcher button:disabled {
   background-color: #61dafb;
   color: #282c34;
