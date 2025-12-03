@@ -1,7 +1,71 @@
 .site-footer {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: #f4f4f4;
   color: #555;
-  border-top: 1px solid #e7e7e7;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto; /* コンテンツが少なくても最下部に配置 */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* アンケート誘導エリア */
+.survey-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  /* 背景を少し強調 */
+  background-color: rgba(97, 218, 251, 0.1); 
+  border: 1px solid rgba(97, 218, 251, 0.3);
+  width: 100%;
+  max-width: 600px;
+}
+
+.survey-message {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* アンケートボタン */
+.survey-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #61dafb;
+  color: #282c34 !important; /* リンク色を強制的に濃いグレーに */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.survey-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(97, 218, 251, 0.4);
+  background-color: #4cd3f8;
+  text-decoration: none;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* --- ダークモード時の微調整 --- */
+/* (index.cssの全体設定が効きますが、独自パーツの色を調整) */
+/* 親要素に .ui-card-dark がある場合のスタイル */
+:global(.ui-card-dark) .survey-container,
+:global(.ui-bg-dark) .survey-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
 }
