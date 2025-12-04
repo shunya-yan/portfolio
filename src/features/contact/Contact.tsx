@@ -1,4 +1,4 @@
-import './Contact.css';
+import "./Contact.css";
 
 export const Contact = () => {
   const subject = encodeURIComponent("ポートフォリオからのお問い合わせ");
@@ -9,23 +9,21 @@ export const Contact = () => {
   return (
     <section id="contact" className="contact-section">
       <h2>Contact</h2>
-      <p>
-        お仕事のご相談やご依頼など、お気軽にご連絡ください。
-      </p>
+      <p>お仕事のご相談やご依頼など、お気軽にご連絡ください。</p>
       <div className="contact-links">
-        <a 
+        <a
           href={gmailUrl}
-          target="_blank" 
-          rel="noopener noreferrer" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="contact-link email"
         >
           Email
         </a>
-        
-        <a 
+
+        <a
           href="https://x.com/shunya_yan127"
-          target="_blank" 
-          rel="noopener noreferrer" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="contact-link x-twitter"
         >
           X (Twitter)

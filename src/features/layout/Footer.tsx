@@ -2,7 +2,6 @@ import "./Footer.css";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-  // 作成したGoogleフォームのURL
   const formUrl =
     "https://docs.google.com/forms/d/e/1FAIpQLSeFUdYm3c2w7CDRWJhgOuDTPonC7UR_yv_V8bOuDRyZOs21nQ/viewform?usp=header";
 
@@ -24,7 +23,7 @@ export const Footer = () => {
         </div>
 
         <p className="copyright">
-          &copy; {currentYear} Shunya Shimizu. All Rights Reserved.
+          &copy; {currentYear} 清水俊也/Shimizu Shunya(^O^)
         </p>
       </div>
     </footer>

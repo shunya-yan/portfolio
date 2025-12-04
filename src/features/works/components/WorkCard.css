@@ -1,4 +1,3 @@
-/* Cardの見た目（枠線や影）はCard.cssに移動したので、ここでは中身のスタイルだけを定義 */
 .work-image {
   width: 100%;
   height: 200px;
@@ -7,9 +6,8 @@
 
 .work-content {
   padding: 20px;
-  text-align: left; /* text-alignをここに移動 */
+  text-align: left;
 }
-/* ...（h3, p, .work-tech, .work-links のスタイルは変更なし）... */
 .work-content h3 {
   margin-top: 0;
   font-size: 1.5rem;

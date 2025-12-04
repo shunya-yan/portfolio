@@ -1,4 +1,3 @@
-/* --- 基本設定 --- */
 *,
 *::before,
 *::after {
@@ -11,13 +10,12 @@ html {
   font-size: 16px;
 }
 
-/* デフォルト（AもBもOFF）：白背景、白カード */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f4f4f4; /* 少しグレーな白 */
+  background-color: #f4f4f4;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -42,7 +40,6 @@ img {
   gap: 40px;
 }
 
-/* --- セクションのサイズと形状の統一 --- */
 .profile-section,
 .works-section,
 .contact-section {
@@ -57,14 +54,12 @@ img {
   border-radius: 16px;
 }
 
-/* --- Headerボタンのスタイル --- */
 .ui-switcher button.active {
   background-color: #61dafb;
   color: #282c34;
   border-color: #61dafb;
   font-weight: bold;
 }
-/* 背景が黒くなった時のボタン視認性確保 */
 .ui-bg-dark .ui-switcher button,
 .ui-card-dark .ui-switcher button {
   color: #fff;
@@ -76,17 +71,11 @@ img {
   color: #333;
 }
 
-/* =========================================
-   UIスイッチのスタイル定義
-   ========================================= */
-
-/* 共通のダークテキスト設定 */
 .ui-card-dark,
 .ui-bg-dark {
   color: #e0e0e0;
 }
 
-/* 見出し、本文、リンクなどの色を強制的に明るくする */
 .ui-card-dark h1,
 .ui-card-dark h2,
 .ui-card-dark h3,
@@ -112,7 +101,6 @@ img {
   color: #e0e0e0 !important;
 }
 
-/* Contactセクションの文字色対策 */
 .ui-card-dark .contact-section h2,
 .ui-card-dark .contact-section p,
 .ui-bg-dark .contact-section h2,
@@ -120,7 +108,6 @@ img {
   color: #e0e0e0 !important;
 }
 
-/* 薄くなりがちな文字の調整 */
 .ui-card-dark .profile-description,
 .ui-card-dark .experience-item p,
 .ui-card-dark .profile-summary,
@@ -132,7 +119,6 @@ img {
   color: #ccc !important;
 }
 
-/* Contactセクションのデフォルト色を白に */
 .contact-section {
   background-color: #fff !important;
   color: #333 !important;
@@ -143,16 +129,13 @@ img {
   color: #333 !important;
 }
 
-/* --- パターンA: カードを黒くする (Card Dark) --- */
-/* 注意: ここでは背景色は変更せず、カードのみ黒くします */
-
 .ui-card-dark .profile-section,
 .ui-card-dark .card-base,
 .ui-card-dark .experience-item,
 .ui-card-dark .site-footer,
 .ui-card-dark .contact-section,
 .ui-card-dark .works-section {
-  background-color: #1e1e1e !important; /* カードを黒く */
+  background-color: #1e1e1e !important;
   color: #eee;
   border: 1px solid #333;
   border-radius: 16px;
@@ -173,14 +156,11 @@ img {
   border: 1px solid #555;
 }
 
-/* --- パターンB: 背景を黒くする (Bg Dark) --- */
-/* ここで画面全体の背景を黒くします */
 .ui-bg-dark {
-  background-color: #121212; /* 背景を真っ黒に */
-  min-height: 100vh; /* 画面の高さ一杯に広げる */
+  background-color: #121212;
+  min-height: 100vh;
 }
 
-/* BのみONの場合（AはOFF）：背景は黒いが、カードは白く戻す（スポットライト風） */
 .ui-bg-dark:not(.ui-card-dark) .profile-section,
 .ui-bg-dark:not(.ui-card-dark) .card-base,
 .ui-bg-dark:not(.ui-card-dark) .experience-item,
@@ -191,8 +171,6 @@ img {
   color: #333 !important;
   border-radius: 16px;
 }
-/* BのみONの場合のテキスト色リセット */
-/* カード内のあらゆるテキスト要素を黒に戻す */
 .ui-bg-dark:not(.ui-card-dark) .profile-section h2,
 .ui-bg-dark:not(.ui-card-dark) .profile-section p,
 .ui-bg-dark:not(.ui-card-dark) .profile-section h3,
@@ -216,13 +194,11 @@ img {
   color: #333 !important;
 }
 
-/* --- パターンA + B: 完全ダークモード (Full Dark) --- */
-/* 背景もカードも黒いので、境界線を目立たせる */
 .ui-card-dark.ui-bg-dark .profile-section,
 .ui-card-dark.ui-bg-dark .card-base,
 .ui-card-dark.ui-bg-dark .experience-item,
 .ui-card-dark.ui-bg-dark .contact-section,
 .ui-card-dark.ui-bg-dark .works-section {
-  border: 1px solid rgba(97, 218, 251, 0.5); /* 青いボーダー */
+  border: 1px solid rgba(97, 218, 251, 0.5);
   box-shadow: 0 0 15px rgba(97, 218, 251, 0.1);
 }

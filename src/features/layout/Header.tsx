@@ -1,5 +1,5 @@
 import "./Header.css";
-import { UiFlags } from "../../App";
+import { UiFlags } from "../../types";
 
 interface HeaderProps {
   title: string;
@@ -26,7 +26,6 @@ export const Header = ({ title, uiFlags, toggleUi }: HeaderProps) => {
 
         <div className="ui-switcher">
           <span>Switch:</span>
-          {/* A: カードを黒く */}
           <button
             onClick={() => toggleUi("cardDark")}
             className={uiFlags.cardDark ? "active" : ""}
@@ -35,7 +34,6 @@ export const Header = ({ title, uiFlags, toggleUi }: HeaderProps) => {
             A (Card)
           </button>
 
-          {/* B: 背景を黒く */}
           <button
             onClick={() => toggleUi("bgDark")}
             className={uiFlags.bgDark ? "active" : ""}

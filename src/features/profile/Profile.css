@@ -1,31 +1,28 @@
-/* --- メインコンテナをカード風に --- */
 .profile-section {
   padding: 50px 40px;
   background-color: #ffffff;
   max-width: 960px;
-  margin: 60px auto; /* 上下の余白を確保 */
+  margin: 60px auto;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08); /* 他の要素と合わせた影 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* --- 上段：写真と自己紹介文のレイアウト --- */
 .profile-content {
   display: flex;
-  align-items: center; /* 垂直方向中央揃え */
+  align-items: center;
   gap: 40px;
   margin-bottom: 50px;
 }
 
-/* 左側：写真と名前 */
 .profile-left {
-  flex-shrink: 0; /* 縮まないようにする */
+  flex-shrink: 0;
   text-align: center;
 }
 
 .profile-image {
   width: 150px;
   height: 150px;
-  border-radius: 50%; /* 円形にする */
+  border-radius: 50%;
   object-fit: cover;
   border: 5px solid #f0f0f0;
   margin-bottom: 10px;
@@ -37,9 +34,8 @@
   color: #333;
 }
 
-/* 右側：テーマと自己紹介文 */
 .profile-text {
-  flex: 1; /* 残りのスペースをすべて使う */
+  flex: 1;
 }
 
 .profile-title {
@@ -55,7 +51,6 @@
   color: #555;
 }
 
-/* --- 経験と技術セクション --- */
 .tech-title {
   font-size: 1.25rem;
   font-weight: 600;
@@ -101,18 +96,16 @@
   border-top: 1px solid #f0f0f0;
 }
 
-/* --- スマホ向けのレスポンシブ対応 --- */
 @media (max-width: 768px) {
   .profile-section {
     margin: 30px 15px;
     padding: 30px 20px;
   }
   .profile-content {
-    flex-direction: column; /* 縦並びにする */
+    flex-direction: column;
   }
   .profile-title {
     text-align: center;
     font-size: 1.8rem;
   }
 }
-
