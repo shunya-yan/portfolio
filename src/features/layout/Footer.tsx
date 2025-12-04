@@ -23,7 +23,7 @@ export const Footer = () => {
         </div>
 
         <p className="copyright">
-          &copy; {currentYear} 清水俊也/Shimizu Shunya(^O^)
+          &copy; {currentYear} 清水俊也(^O^)
         </p>
       </div>
     </footer>
